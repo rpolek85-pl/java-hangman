@@ -70,8 +70,7 @@ public class PrintHangman {
     }
 
     public void print() {
-        System.out.print(hiddenWord);
-        String graphicsHiddenWord = HANGMANPICS[step];
+        String graphicsHiddenWord = HANGMANPICS[step].replace("+---+", hiddenWord);
         System.out.println(graphicsHiddenWord);
 
     }

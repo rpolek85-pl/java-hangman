@@ -2,11 +2,11 @@ package pl.edu.agh.hangman;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Word {
+public class GameWord {
 
     private final String word;
     private List<String> listLiter;
-    public Word() {
+    public GameWord() {
         ConvertWord cw = new ConvertWord();
         RandomWord rw = new RandomWord();
         String newWord = rw.randomWord(cw.readWordsFromFile());
@@ -31,14 +31,18 @@ public class Word {
     }
 
     public int worngLetterNumber() {
-        CheckWord checkWord = new CheckWord();
-        return checkWord.getCheckWord(word,listLiter);
+        CheckGameWord checkGameWord = new CheckGameWord();
+        return checkGameWord.countWrongLetters(word,listLiter);
     }
 
     public String getHiddenWord(){
         PrintHiddenWord printHiddenWord = new PrintHiddenWord();
-        String hiddenWord = printHiddenWord.getHiddenWord(this.word, this.listLiter);
+        String hiddenWord = printHiddenWord.getHiddenWord(word, listLiter);
         return hiddenWord;
     }
 
+    public boolean checkWin(){
+        CheckGameWord checkGameWord = new CheckGameWord();
+        return checkGameWord.checkWin(word, listLiter);
+    }
 }

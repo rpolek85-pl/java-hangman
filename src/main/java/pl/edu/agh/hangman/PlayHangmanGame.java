@@ -5,32 +5,31 @@ public class PlayHangmanGame {
         PrintHello printHello = new PrintHello();
         printHello.printHello();
 
-        Word word = new Word();
-        PrintHangman printHangman = new PrintHangman(word.getHiddenWord());
+        GameWord gameWord = new GameWord();
+        PrintHangman printHangman = new PrintHangman(gameWord.getHiddenWord());
         UserGet userGet = new UserGet();
 
-        while (isOver(word)) {
-            printHangman.setStep(word.getListLiterLength());
+        while (!isOver(gameWord) && !gameWord.checkWin()) {
+            printHangman.setStep(gameWord.worngLetterNumber());
+            printHangman.setHiddenWord(gameWord.getHiddenWord());
             printHangman.print();
-            System.out.println(word.getHiddenWord());
-            System.out.println(word.getWord());
+            System.out.println(gameWord.getWord());
             String letter = userGet.getLetter();
-            word.addLetter(letter);
-
+            gameWord.addLetter(letter);
         }
 
-
+        System.out.println("Szukane słowo: " + gameWord.getWord());
+        if(gameWord.checkWin()){
+            System.out.println("YOU WIN!");
+        }else  {
+            System.out.println("GAME OVER!");
+        }
 
     }
 
-    public boolean isOver(Word word) {
-        if(word.getListLiterLength() > 6){
-            return false;
-        }
-        else
-        {
-            return true;
-        }
+
+    public boolean isOver(GameWord gameWord) {
+        return gameWord.worngLetterNumber() > 6;
     }
 
 
