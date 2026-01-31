@@ -20,6 +20,10 @@ public class Word {
         return listLiter;
     }
 
+    public int  getListLiterLength() {
+        return listLiter.size();
+    }
+
     public void addLetter(String letter) {
         this.listLiter.add(letter);
     }

@@ -62,6 +62,14 @@ public class PrintHangman {
         this.hiddenWord = hiddenWord;
     }
 
+    public void setHiddenWord(String hiddenWord) {
+        this.hiddenWord = hiddenWord;
+    }
+
+    public void setStep(int step) {
+        this.step = step;
+    }
+
     public void print() {
         System.out.print(hiddenWord);
         String graphicsHiddenWord = HANGMANPICS[step];

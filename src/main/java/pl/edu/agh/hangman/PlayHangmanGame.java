@@ -6,6 +6,21 @@ public class PlayHangmanGame {
         printHello.printHello();
 
         Word word = new Word();
-        word.
+        PrintHangman printHangman = new PrintHangman(0, word.getHiddenWord());
+        while (isOver(word)) {
+            printHangman.print();
+
+        }
+
+    }
+
+    public boolean isOver(Word word) {
+        if(word.getListLiterLength() > 5){
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 }
