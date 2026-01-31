@@ -18,6 +18,7 @@ public class ConvertWord {
         try (Stream<String> stream = Files.lines(Paths.get(filePath))) {
             words = stream
                     .flatMap(line -> Stream.of(line.split("\\s+")))
+                    .map(String::trim)
                     .filter(word -> !word.isEmpty())
                     .collect(Collectors.toList());
         } catch (Exception e) {
