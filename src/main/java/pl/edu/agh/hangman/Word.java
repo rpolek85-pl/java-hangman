@@ -1,4 +1,5 @@
 package pl.edu.agh.hangman;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Word {
@@ -6,7 +7,9 @@ public class Word {
     private final String word;
     private List<String> listLiter;
     public Word() {
-        this.word = "aaa";
+        String[] listStr  = {"ada","ada"};
+        RandomWord  rw = new RandomWord();
+        this.word = rw.randomWord(listStr);
     }
 
     public String getWord() {
