@@ -25,7 +25,9 @@ public class Word {
     }
 
     public String getHiddenWord(){
-        return "____";
+        PrintHiddenWord printHiddenWord = new PrintHiddenWord();
+        String hiddenWord = printHiddenWord.getHiddenWord(this.word);
+        return hiddenWord;
     }
 
 }
