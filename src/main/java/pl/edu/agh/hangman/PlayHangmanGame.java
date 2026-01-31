@@ -6,13 +6,17 @@ public class PlayHangmanGame {
         printHello.printHello();
 
         Word word = new Word();
-        PrintHangman printHangman = new PrintHangman(0, word.getHiddenWord());
+        PrintHangman printHangman = new PrintHangman(word.getHiddenWord());
         UserGet userGet = new UserGet();
 
         while (isOver(word)) {
+            printHangman.setStep(word.getListLiterLength());
             printHangman.print();
+            System.out.println(word.getHiddenWord());
+            System.out.println(word.getWord());
             String letter = userGet.getLetter();
             word.addLetter(letter);
+
         }
 
 

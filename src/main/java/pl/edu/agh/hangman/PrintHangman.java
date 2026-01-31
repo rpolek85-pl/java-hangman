@@ -57,8 +57,7 @@ public class PrintHangman {
                     "========"
     };
 
-    public PrintHangman(int step, String hiddenWord) {
-        this.step = step;
+    public PrintHangman(String hiddenWord) {
         this.hiddenWord = hiddenWord;
     }
 
@@ -73,6 +72,7 @@ public class PrintHangman {
     public void print() {
         System.out.print(hiddenWord);
         String graphicsHiddenWord = HANGMANPICS[step];
-        System.out.print(graphicsHiddenWord);
+        System.out.println(graphicsHiddenWord);
+
     }
 }
