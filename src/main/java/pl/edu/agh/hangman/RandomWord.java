@@ -7,7 +7,7 @@ public class RandomWord {
 
     public String randomWord(List<String> words){
         Random random = new Random();
-        String word = words[random.nextInt(words.size()];
+        String word = words.get(random.nextInt(words.size()));
         return word;
     }
 }
