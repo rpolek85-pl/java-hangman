@@ -1,6 +1,6 @@
 package pl.edu.agh.hangman;
 
-public class printHiddenWord {
+public class PrintHiddenWord {
 
     public static String getHiddenWord(String word) {
         if (word == null) return "";
