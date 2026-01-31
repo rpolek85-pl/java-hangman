@@ -7,9 +7,11 @@ public class Word {
     private final String word;
     private List<String> listLiter;
     public Word() {
-        String[] listStr  = {"ada","ada"};
-        RandomWord  rw = new RandomWord();
-        this.word = rw.randomWord(listStr);
+        ConvertWord cw = new ConvertWord();
+        RandomWord rw = new RandomWord();
+        String newWord = cw.readWordsFromFile();
+        this.word = newWord;
+        List<String> listLiter = new ArrayList<>();
     }
 
     public String getWord() {
@@ -30,7 +32,7 @@ public class Word {
 
     public String getHiddenWord(){
         PrintHiddenWord printHiddenWord = new PrintHiddenWord();
-        String hiddenWord = printHiddenWord.getHiddenWord(this.word);
+        String hiddenWord = printHiddenWord.getHiddenWord(this.word, this.listLiter);
         return hiddenWord;
     }
 

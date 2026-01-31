@@ -12,7 +12,7 @@ public class ConvertWord {
     private String src;
     private String filePath = "src/main/resources/slowa.txt";
 
-    public List<String> readWordsFromFile(String filePath) {
+    public List<String> readWordsFromFile() {
         List<String> words = new ArrayList<>();
 
         try (Stream<String> stream = Files.lines(Paths.get(filePath))) {

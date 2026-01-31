@@ -9,7 +9,6 @@ public class PlayHangmanGame {
         PrintHangman printHangman = new PrintHangman(0, word.getHiddenWord());
         while (isOver(word)) {
             printHangman.print();
-
         }
 
     }
