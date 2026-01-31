@@ -7,14 +7,20 @@ public class PlayHangmanGame {
 
         Word word = new Word();
         PrintHangman printHangman = new PrintHangman(0, word.getHiddenWord());
+        UserGet userGet = new UserGet();
+
         while (isOver(word)) {
             printHangman.print();
+            String letter = userGet.getLetter();
+            word.addLetter(letter);
         }
+
+
 
     }
 
     public boolean isOver(Word word) {
-        if(word.getListLiterLength() > 5){
+        if(word.getListLiterLength() > 6){
             return false;
         }
         else
@@ -22,4 +28,6 @@ public class PlayHangmanGame {
             return true;
         }
     }
+
+
 }

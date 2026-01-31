@@ -9,9 +9,9 @@ public class Word {
     public Word() {
         ConvertWord cw = new ConvertWord();
         RandomWord rw = new RandomWord();
-        String newWord = cw.readWordsFromFile();
+        String newWord = rw.randomWord(cw.readWordsFromFile());
         this.word = newWord;
-        List<String> listLiter = new ArrayList<>();
+        this.listLiter = new ArrayList<>();
     }
 
     public String getWord() {
