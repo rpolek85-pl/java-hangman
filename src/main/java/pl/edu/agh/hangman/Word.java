@@ -30,6 +30,11 @@ public class Word {
         this.listLiter.add(letter);
     }
 
+    public int worngLetterNumber() {
+        CheckWord checkWord = new CheckWord();
+        return checkWord.getCheckWord(word,listLiter);
+    }
+
     public String getHiddenWord(){
         PrintHiddenWord printHiddenWord = new PrintHiddenWord();
         String hiddenWord = printHiddenWord.getHiddenWord(this.word, this.listLiter);

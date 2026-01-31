@@ -4,22 +4,18 @@ import java.util.List;
 
 public class CheckWord {
 
-    public static String getCheckWord(String word, List<Character> guessedLetters) {
-        if (word == null || guessedLetters == null) return "";
+    public static int getCheckWord(String word, List<String> guessedLetters) {
 
         StringBuilder result = new StringBuilder();
 
         for (int i = 0; i < word.length(); i++) {
             char currentChar = word.charAt(i);
-
-            if (guessedLetters.contains(currentChar)) {
-                result.append(currentChar).append(" ");
-            } else {
-                result.append("_ ");
+            if(guessedLetters.contains(String.valueOf(currentChar))) {
+                guessedLetters.remove(currentChar);
             }
         }
 
-        return result.toString().trim();
+        return guessedLetters.size();
     }
 }
 
